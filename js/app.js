@@ -201,12 +201,12 @@ new Vue({
     },
   },
   async mounted() {
-    let response = await fetch("portrait_meta.json");
+    let response = await fetch("data\\portrait_meta-m.json");
     let json = await response.json();
 
     this.meta = json;
 
-    response = await fetch("glyph_meta.json");
+    response = await fetch("data\\glyph_meta-m.json");
     json = await response.json();
 
     this.glyph_meta = json;

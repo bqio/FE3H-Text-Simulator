@@ -14,3 +14,7 @@ v0.0.3
 - Optimized render function. See **app.js**;
 - Added favicon.
 
+v0.0.4
+- Refactoring;
+- Bugs fixed.
+
