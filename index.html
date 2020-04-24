@@ -9,6 +9,11 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link
+      rel="icon"
+      type="image/png"
+      href="img/portraits/Anna/expression-1.png"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>FE3H Text Simulator</title>
   </head>
@@ -18,7 +23,7 @@
         <div class="card">
           <div class="card-body">
             <h3>
-              FE3H Text Simulator v0.0.2 <small class="text-muted">beta</small>
+              FE3H Text Simulator v0.0.3 <small class="text-muted">beta</small>
             </h3>
             <canvas
               ref="canvas"
@@ -49,7 +54,7 @@
             <div class="form-group">
               <label>Text</label>
               <textarea
-                rows="2"
+                rows="3"
                 v-model="text"
                 class="form-control"
                 @keydown="rowLimit"
@@ -71,7 +76,7 @@
         </p>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

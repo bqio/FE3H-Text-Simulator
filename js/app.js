@@ -7,6 +7,7 @@ const NAME_POS_X_END = 495;
 const NAME_POS_Y = 222;
 const TEXT_POS_X = 305;
 const TEXT_POS_Y = 305;
+const MAX_TEXT_ROW = 3;
 
 new Vue({
   el: "#app",
@@ -39,27 +40,29 @@ new Vue({
         resolve();
       });
     },
-    async render() {
-      // Clear canvas
+    async renderNewPortrait() {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-      // Draw textbox
       this.ctx.drawImage(this.resources.text_box, 0, 0);
-
       try {
-        // Draw name
         this.drawName(this.name);
-
-        // Draw text
         this.drawText(this.text);
-
         this.error = "";
       } catch (error) {
         this.error = "Unknown glyph. See glyph_meta.json";
       }
-
-      // Draw portrait
       await this.drawPortrait(this.char, this.emotion);
+    },
+    render() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.ctx.drawImage(this.resources.text_box, 0, 0);
+      try {
+        this.drawName(this.name);
+        this.drawText(this.text);
+        this.error = "";
+      } catch (error) {
+        this.error = "Unknown glyph. See glyph_meta.json";
+      }
+      this.ctx.drawImage(this.resources.portrait, 1200, 0);
     },
     preloadImage(url) {
       return new Promise((resolve, reject) => {
@@ -71,7 +74,7 @@ new Vue({
     },
     rowLimit(e) {
       if (e.code == "Enter") {
-        if (this.text.split("\n").length == 2) {
+        if (this.text.split("\n").length == MAX_TEXT_ROW) {
           e.preventDefault();
           return false;
         }
@@ -177,6 +180,7 @@ new Vue({
       tempCTX.globalCompositeOperation = "source-in";
       tempCTX.drawImage(image, 0, 0);
 
+      this.resources.portrait = tempCanvas;
       this.ctx.drawImage(tempCanvas, 1200, 0);
     },
   },
@@ -184,10 +188,10 @@ new Vue({
     async char() {
       this.emotions = this.meta[this.char];
       this.emotion = this.emotions[0];
-      await this.render();
+      await this.renderNewPortrait();
     },
     async emotion() {
-      await this.render();
+      await this.renderNewPortrait();
     },
     async name() {
       await this.render();
