@@ -5,14 +5,8 @@ const SPACE_SIZE = 15;
 const NAME_POS_X_START = 100;
 const NAME_POS_X_END = 495;
 const NAME_POS_Y = 222;
-const TEXT_POS_X = 250;
-const TEXT_POS_Y = 325;
-// 110x250
-// 495x250
-// 192
-// 495 - 192 = 303 (free space)
-// 303 / 2 = 151
-// 395x60
+const TEXT_POS_X = 305;
+const TEXT_POS_Y = 305;
 
 new Vue({
   el: "#app",
@@ -20,8 +14,8 @@ new Vue({
     meta: {},
     glyph_meta: {},
     char: "Anna",
-    name: "Анна",
-    text: "Привет, друг!\nКак твои дела?",
+    name: "Anna",
+    text: "Hello, friend!\nHow are you?",
     emotion: "",
     emotions: [],
     error: "",
@@ -58,6 +52,7 @@ new Vue({
 
         // Draw text
         this.drawText(this.text);
+
         this.error = "";
       } catch (error) {
         this.error = "Unknown glyph. See glyph_meta.json";
@@ -81,6 +76,12 @@ new Vue({
           return false;
         }
       }
+    },
+    download(e) {
+      e.target.download = `${this.name}.png`;
+      e.target.href = this.canvas
+        .toDataURL("image/png")
+        .replace("image/png", "image/octet-stream");
     },
     createTempCanvas(w, h) {
       const canvas = document.createElement("canvas");

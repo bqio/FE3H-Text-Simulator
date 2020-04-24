@@ -3,5 +3,9 @@ textarea {
 }
 
 .card-body {
-  padding: 40px;
+  padding: 30px;
+}
+
+a:hover {
+  text-decoration: none;
 }

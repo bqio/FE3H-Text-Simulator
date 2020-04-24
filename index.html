@@ -14,10 +14,12 @@
   </head>
   <body>
     <div id="app" v-cloak>
-      <div class="container mt-5">
+      <div class="container mt-4">
         <div class="card">
           <div class="card-body">
-            <h3>FE3H Text Simulator <small class="text-muted">beta</small></h3>
+            <h3>
+              FE3H Text Simulator v0.0.2 <small class="text-muted">beta</small>
+            </h3>
             <canvas
               ref="canvas"
               class="w-100 mb-4"
@@ -53,10 +55,20 @@
                 @keydown="rowLimit"
               ></textarea>
             </div>
+            <a
+              class="btn btn-block btn-success"
+              href="#"
+              @click="download($event)"
+            >
+              Download
+            </a>
             <p class="text-danger">{{ error }}</p>
           </div>
         </div>
-        <p class="text-center my-3 text-muted">by bqio, thx SinsofSloth</p>
+        <p class="text-center my-3 text-muted">
+          by <a href="https://github.com/bqio">bqio</a>, thx
+          <a href="https://github.com/SinsofSloth">SinsofSloth</a>
+        </p>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
