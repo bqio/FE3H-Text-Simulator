@@ -6,6 +6,13 @@
     "expression-4",
     "expression-5"
   ],
+  "Aelfric": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5"
+    ],
   "Alois": [
     "expression-1",
     "expression-2",
@@ -15,6 +22,14 @@
     "expression-6"
   ],
   "Anna": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
+  "Anna (Trickster)": [
     "expression-1",
     "expression-2",
     "expression-3",
@@ -47,6 +62,22 @@
     "expression-6"
   ],
   "Ashe (Timeskip)": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
+  "Balthus": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
+  "Balthus (Timeskip)": [
     "expression-1",
     "expression-2",
     "expression-3",
@@ -137,6 +168,38 @@
     "expression-6"
   ],
   "Claude (Timeskip)": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
+  "Constance": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
+  "Constance (Gloomy)": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
+  "Constance (Gloomy)(Timeskip)": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
+  "Constance (Timeskip)": [
     "expression-1",
     "expression-2",
     "expression-3",
@@ -367,6 +430,22 @@
     "expression-5",
     "expression-6"
   ],
+  "Hapi": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
+  "Hapi (Timeskip)": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
   "Hegemon Edelgard": ["expression-1", "expression-2", "expression-3"],
   "Hilda": [
     "expression-1",
@@ -443,6 +522,15 @@
     "expression-6"
   ],
   "Jeritza": ["expression-1", "expression-2"],
+  "Jeritza (Maskless)": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6",
+    "expression-7"
+  ],
   "Judith": [
     "expression-1",
     "expression-2",
@@ -756,4 +844,20 @@
   "Titanus": ["expression-1"],
   "Tomas": ["expression-1", "expression-2", "expression-3", "expression-4"],
   "White Beast": ["expression-1"]
+  "Yuri": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
+  "Yuri (Timeskip)": [
+    "expression-1",
+    "expression-2",
+    "expression-3",
+    "expression-4",
+    "expression-5",
+    "expression-6"
+  ],
 }
