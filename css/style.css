@@ -1,0 +1,7 @@
+textarea {
+  resize: none;
+}
+
+.card-body {
+  padding: 40px;
+}
