@@ -8,69 +8,77 @@ const NAME_POS_Y = 222;
 const TEXT_POS_X = 305;
 const TEXT_POS_Y = 305;
 const MAX_TEXT_ROW = 3;
+const DEBUG = false;
 
 new Vue({
   el: "#app",
   data: {
-    meta: {},
-    glyph_meta: {},
-    char: "Anna",
-    name: "Anna",
-    text: "Hello, friend!\nHow are you?",
-    emotion: "",
-    emotions: [],
-    error: "",
+    portraits: {},
+    glyphs: {},
+    resources: {},
+    name: null,
+    portrait: null,
+    emotion: null,
+    text: null,
+    error: null,
     canvas: null,
     ctx: null,
-    resources: {},
+    loading: true,
+  },
+  mounted() {
+    this.init();
   },
   methods: {
-    init() {
-      return new Promise(async (resolve) => {
-        this.canvas = this.$refs.canvas;
-        this.ctx = this.canvas.getContext("2d");
+    async init() {
+      // Loading meta data
+      log("Loading meta data...");
+      this.portraits = await (await fetch("data\\portrait_meta.json")).json();
+      this.glyphs = await (await fetch("data\\glyph_meta.json")).json();
+      log("Done.");
 
-        this.resources.text_box = await this.preloadImage("img/textbox.png");
-        this.resources.font_c = await this.preloadImage("img/fc.png");
-        this.resources.font = await this.preloadImage("img/f.png");
-        this.resources.mask = await this.preloadImage("img/mask.png");
+      // Initialize canvas and context
+      log("Initialize canvas and context...");
+      this.canvas = this.$refs.canvas;
+      this.ctx = this.canvas.getContext("2d");
+      log("Done.");
 
-        this.emotion = this.emotions[0];
+      // Loading resources
+      log("Loading resources...");
+      this.resources.textBox = await loadImage("img/textbox.png");
+      this.resources.fontColored = await loadImage("img/fc.png");
+      this.resources.font = await loadImage("img/f.png");
+      this.resources.fontMask = await loadImage("img/mask.png");
+      this.resources.portrait = await loadImage("img/portraits/Anna/0.png");
+      log("Done.");
 
-        resolve();
-      });
-    },
-    async renderNewPortrait() {
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      this.ctx.drawImage(this.resources.text_box, 0, 0);
-      try {
-        this.drawName(this.name);
-        this.drawText(this.text);
-        this.error = "";
-      } catch (error) {
-        this.error = "Unknown glyph. See glyph_meta.json";
-      }
-      await this.drawPortrait(this.char, this.emotion);
+      // Set default values
+      log("Set default values...");
+      this.portrait = this.name = "Anna";
+      this.emotion = 0;
+      this.text = "Hello, friend!\nHow are you?";
+      log("Done.");
+
+      // Running render
+      this.render();
     },
     render() {
+      log("Rendering...");
+
+      // Clear canvas
+      log("Clearing canvas...");
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      this.ctx.drawImage(this.resources.text_box, 0, 0);
-      try {
-        this.drawName(this.name);
-        this.drawText(this.text);
-        this.error = "";
-      } catch (error) {
-        this.error = "Unknown glyph. See glyph_meta.json";
-      }
-      this.ctx.drawImage(this.resources.portrait, 1200, 0);
-    },
-    preloadImage(url) {
-      return new Promise((resolve, reject) => {
-        const image = new Image();
-        image.onload = () => resolve(image);
-        image.onabort = (ev) => reject(ev);
-        image.src = url;
-      });
+      log("Done.");
+
+      // Drawing all elements
+      log("Drawing...");
+      this.ctx.drawImage(this.resources.textBox, 0, 0);
+      this.drawName(this.name);
+      this.drawText(this.text);
+      this.drawPortrait(this.resources.portrait);
+      log("Done.");
+
+      this.loading = false;
+      log("=========================================");
     },
     rowLimit(e) {
       if (e.code == "Enter") {
@@ -86,23 +94,26 @@ new Vue({
         .toDataURL("image/png")
         .replace("image/png", "image/octet-stream");
     },
-    createTempCanvas(w, h) {
-      const canvas = document.createElement("canvas");
-
-      canvas.width = w;
-      canvas.height = h;
-
-      return canvas;
-    },
     drawName(text) {
+      // If text is empty, not draw
       if (text == "") return;
-      const glyphs = [];
-      for (let i = 0; i < text.length; i++) {
-        const tempCanvas = this.createTempCanvas(GLYPH_W, GLYPH_H);
-        const tempCTX = tempCanvas.getContext("2d");
-        const meta = this.glyph_meta[text[i]];
 
-        tempCTX.drawImage(
+      // Initialize word
+      const word = [];
+
+      for (let i = 0; i < text.length; i++) {
+        // If letter eq space, then push space in word
+        if (text[i] == " ") {
+          word.push(createCanvas(SPACE_SIZE, GLYPH_H)[0]);
+          continue;
+        }
+
+        // Initialize empty canvas and meta
+        const [canvas, ctx] = createCanvas(GLYPH_W, GLYPH_H);
+        const meta = this.glyphs[text[i]];
+
+        // Drawing letter in empty canvas
+        ctx.drawImage(
           this.resources.font,
           meta[0] * GLYPH_W,
           meta[1] * GLYPH_H,
@@ -114,45 +125,52 @@ new Vue({
           GLYPH_H
         );
 
-        glyphs.push(trim(tempCanvas));
+        // Push trim letter in word
+        word.push(trim(canvas));
       }
 
-      let width = glyphs.map((c) => c.width).reduce((total, n) => (total += n));
-      let x = NAME_POS_X_END - NAME_POS_X_START;
-      let x1 = x - width;
-      let x2 = x1 / 2;
-      let corX = x2 + NAME_POS_X_START;
-      let corY = NAME_POS_Y;
+      // Get word width and get x pos of centered name
+      const width = word
+        .map((letter) => letter.width)
+        .reduce((total, width) => (total += width));
+      let posX =
+        (NAME_POS_X_END - NAME_POS_X_START - width) / 2 + NAME_POS_X_START;
 
-      for (let i = 0; i < text.length; i++) {
-        const canvas = glyphs[i];
-
-        this.ctx.drawImage(canvas, corX, corY);
-        corX += canvas.width;
+      // Drawing word
+      log(`Drawing name: ${text}`);
+      for (const letter of word) {
+        this.ctx.drawImage(letter, posX, NAME_POS_Y);
+        posX += letter.width;
       }
     },
     drawText(text) {
-      let corX = TEXT_POS_X;
-      let corY = TEXT_POS_Y;
+      // If text is empty, not draw
+      if (text == "") return;
+
+      // Initialize text positions
+      let posX = TEXT_POS_X;
+      let posY = TEXT_POS_Y;
 
       for (let i = 0; i < text.length; i++) {
-        const tempCanvas = this.createTempCanvas(GLYPH_W, GLYPH_H);
-        const tempCTX = tempCanvas.getContext("2d");
-        const meta = this.glyph_meta[text[i]];
+        const [canvas, ctx] = createCanvas(GLYPH_W, GLYPH_H);
+        const meta = this.glyphs[text[i]];
 
+        // If letter eq new line, then change pos
         if (text[i] == "\n") {
-          corX = TEXT_POS_X;
-          corY += GLYPH_H;
+          posX = TEXT_POS_X;
+          posY += GLYPH_H;
           continue;
         }
 
+        // If letter eq space, then change x pos
         if (text[i] == " ") {
-          corX += SPACE_SIZE;
+          posX += SPACE_SIZE;
           continue;
         }
 
-        tempCTX.drawImage(
-          this.resources.font_c,
+        // Drawing letter in empty canvas
+        ctx.drawImage(
+          this.resources.fontColored,
           meta[0] * GLYPH_W,
           meta[1] * GLYPH_H,
           GLYPH_W,
@@ -163,59 +181,63 @@ new Vue({
           GLYPH_H
         );
 
-        const trimmedCanvas = trim(tempCanvas);
+        const trimmedCanvas = trim(canvas);
 
-        this.ctx.drawImage(trimmedCanvas, corX, corY);
-        corX += trimmedCanvas.width + GLYPH_MARGIN;
+        // Drawing letter
+        this.ctx.drawImage(trimmedCanvas, posX, posY);
+        posX += trimmedCanvas.width + GLYPH_MARGIN;
       }
+
+      log(`Drawing text: ${text}`);
     },
-    async drawPortrait(name, emotion) {
-      const image = await this.preloadImage(
-        `img\\portraits\\${name}\\${emotion}.png`
+    drawPortrait(image) {
+      log("Drawing portrait...");
+      const [canvas, ctx] = createCanvas(image.width, image.height);
+
+      // Drawing portrait and mask
+      ctx.drawImage(this.resources.fontMask, 0, 0);
+      ctx.globalCompositeOperation = "source-in";
+      ctx.drawImage(image, 0, 0);
+
+      this.ctx.drawImage(canvas, 1200, 0);
+    },
+    async updatePortrait() {
+      this.emotion = 0;
+      this.resources.portrait = await loadImage(
+        `img\\portraits\\${this.portrait}\\${this.emotion}.png`
       );
-      const tempCanvas = this.createTempCanvas(image.width, image.height);
-      const tempCTX = tempCanvas.getContext("2d");
-
-      tempCTX.drawImage(this.resources.mask, 0, 0);
-      tempCTX.globalCompositeOperation = "source-in";
-      tempCTX.drawImage(image, 0, 0);
-
-      this.resources.portrait = tempCanvas;
-      this.ctx.drawImage(tempCanvas, 1200, 0);
+      this.render();
     },
-  },
-  watch: {
-    async char() {
-      this.emotions = this.meta[this.char];
-      this.emotion = this.emotions[0];
-      await this.renderNewPortrait();
+    async updateEmotion() {
+      this.resources.portrait = await loadImage(
+        `img\\portraits\\${this.portrait}\\${this.emotion}.png`
+      );
+      this.render();
     },
-    async emotion() {
-      await this.renderNewPortrait();
-    },
-    async name() {
-      await this.render();
-    },
-    async text() {
-      await this.render();
-    },
-  },
-  async mounted() {
-    let response = await fetch("data\\portrait_meta-m.json");
-    let json = await response.json();
-
-    this.meta = json;
-
-    response = await fetch("data\\glyph_meta-m.json");
-    json = await response.json();
-
-    this.glyph_meta = json;
-
-    this.emotions = this.meta[this.char];
-
-    await this.init();
   },
 });
+
+function log(text) {
+  DEBUG ? console.log(text) : null;
+}
+
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onabort = (ev) => reject(ev);
+    image.src = src;
+  });
+}
+
+function createCanvas(width, height) {
+  const canvas = document.createElement("canvas");
+
+  canvas.width = width;
+  canvas.height = height;
+
+  return [canvas, canvas.getContext("2d")];
+}
 
 // Credits: github.com/remy
 // MIT http://rem.mit-license.org

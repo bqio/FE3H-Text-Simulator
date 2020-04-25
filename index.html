@@ -19,36 +19,49 @@
   </head>
   <body>
     <div id="app" v-cloak>
-      <div class="container mt-4">
+      <div class="container mt-4" v-show="!loading">
         <div class="card">
           <div class="card-body">
             <h3>
-              FE3H Text Simulator v0.0.4 <small class="text-muted">beta</small>
+              FE3H Text Simulator v1.0.0
             </h3>
             <canvas
               ref="canvas"
-              class="w-100 mb-4"
+              class="w-100"
               width="1728"
               height="554"
             ></canvas>
             <div class="form-group">
               <label>Name</label>
-              <input v-model="name" type="text" class="form-control" />
+              <input
+                v-model="name"
+                @keyup="render()"
+                type="text"
+                class="form-control"
+              />
             </div>
             <div class="form-group">
               <label>Portrait</label>
-              <select class="form-control" v-model="char">
-                <option v-for="(_, name) in meta" :value="name"
-                  >{{ name }}</option
-                >
+              <select
+                class="form-control"
+                @change="updatePortrait"
+                v-model="portrait"
+              >
+                <option v-for="(_, name) in portraits" :value="name">
+                  {{ name }}
+                </option>
               </select>
             </div>
             <div class="form-group">
               <label>Emotion</label>
-              <select class="form-control" v-model="emotion">
-                <option v-for="emotion in emotions" :value="emotion"
-                  >{{ emotion }}</option
-                >
+              <select
+                class="form-control"
+                @change="updateEmotion"
+                v-model="emotion"
+              >
+                <option v-for="(_, idx) in portraits[portrait]" :value="idx">
+                  {{ idx }}
+                </option>
               </select>
             </div>
             <div class="form-group">
@@ -58,6 +71,7 @@
                 v-model="text"
                 class="form-control"
                 @keydown="rowLimit"
+                @keyup="render()"
               ></textarea>
             </div>
             <a
@@ -67,7 +81,7 @@
             >
               Download
             </a>
-            <p class="text-danger">{{ error }}</p>
+            <p v-if="error" class="text-danger">{{ error }}</p>
           </div>
         </div>
         <p class="text-center my-3 text-muted">
@@ -76,7 +90,7 @@
         </p>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="js/app-m.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

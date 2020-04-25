@@ -1,759 +1,125 @@
 {
-  "Acheron": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Alois": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Anna": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Annette": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Annette (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Ashe": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Ashe (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Bernadetta": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Bernadetta (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Byleth (F)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Byleth (F)(Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Byleth (M)": [
-    "expression-0",
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-6"
-  ],
-  "Byleth (M)(Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Caspar": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Caspar (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Catherine": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Claude": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Claude (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Cornelia": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Cyril": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Cyril (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Death Knight": ["expression-1"],
-  "Dedue": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Dedue (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Dimitri": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Dimitri (Child)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Dimitri (Insane)(Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Dimitri (No Eyepatch) (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Dimitri (Timeskip)": [
-    "expression-1",
-    "expression-10",
-    "expression-11",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7",
-    "expression-8",
-    "expression-9"
-  ],
-  "Dorothea": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Dorothea (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Duke Aegir": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4"
-  ],
-  "Edelgard": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Edelgard (Child)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Edelgard (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Emperor Ionius IX": ["expression-1", "expression-2", "expression-3"],
-  "Felix": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Felix (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Ferdinand": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Ferdinand (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Flame Emperor": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Flayn": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Fleche": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Fleche (Villager)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Giant Bird": ["expression-1"],
-  "Giant Crawler": ["expression-1"],
-  "Giant Wolf": ["expression-1"],
-  "Gilbert": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Golem": ["expression-1"],
-  "Gwendal": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Hanneman": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Hegemon Edelgard": ["expression-1", "expression-2", "expression-3"],
-  "Hilda": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Hilda (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Hubert": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Hubert (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Ignatz": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Ignatz (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Ingrid": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Ingrid (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Jeralt": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Jeritza": ["expression-1", "expression-2"],
-  "Judith": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Kostas": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Kronya": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Ladislava": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Lambert": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Leonie": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Leonie (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Linhardt": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Linhardt (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Lonato": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Lord Arundel": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Lorenz": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Lorenz (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Lysithea": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Lysithea (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Manuela": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Marcelle": ["expression-1"],
-  "Marianne": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7",
-    "expression-8",
-    "expression-9"
-  ],
-  "Marianne (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7",
-    "expression-8",
-    "expression-9"
-  ],
-  "Mercedes": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Mercedes (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Metodey": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Miklan": ["expression-1", "expression-2", "expression-3", "expression-4"],
-  "Monica": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Nader": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Nemesis": ["expression-1", "expression-2", "expression-3", "expression-4"],
-  "Pallardó": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Petra": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Petra (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Randolph": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Raphael": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Raphael (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Rhea": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-393",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Rodrigue": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Seiros": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Seteth": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Shamir": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Solon": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5"
-  ],
-  "Sothis": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6",
-    "expression-7"
-  ],
-  "Sylvain": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Sylvain (Timeskip)": [
-    "expression-1",
-    "expression-2",
-    "expression-3",
-    "expression-4",
-    "expression-5",
-    "expression-6"
-  ],
-  "Thales": ["expression-1", "expression-2", "expression-3", "expression-4"],
-  "The Immaculate One": ["expression-1"],
-  "The Immovable": ["expression-1"],
-  "The Wind Caller": ["expression-1"],
-  "Titanus": ["expression-1"],
-  "Tomas": ["expression-1", "expression-2", "expression-3", "expression-4"],
-  "White Beast": ["expression-1"]
+ "Acheron": 5,
+ "Aelfric": 5,
+ "Alois": 6,
+ "Anna": 6,
+ "Anna (Trickster)": 6,
+ "Annette": 6,
+ "Annette (Timeskip)": 6,
+ "Ashe": 6,
+ "Ashe (Timeskip)": 6,
+ "Balthus": 6,
+ "Balthus (Timeskip)": 6,
+ "Bernadetta": 7,
+ "Bernadetta (Timeskip)": 7,
+ "Byleth (F)": 6,
+ "Byleth (F) (Timeskip)": 6,
+ "Byleth (M)": 6,
+ "Byleth (M) (Timeskip)": 6,
+ "Caspar": 6,
+ "Caspar (Timeskip)": 6,
+ "Catherine": 6,
+ "Claude": 6,
+ "Claude (Timeskip)": 6,
+ "Constance": 6,
+ "Constance (Gloomy)": 6,
+ "Constance (Gloomy) (Timeskip)": 6,
+ "Constance (Timeskip)": 6,
+ "Cornelia": 5,
+ "Cyril": 6,
+ "Cyril (Timeskip)": 6,
+ "Death Knight": 1,
+ "Dedue": 7,
+ "Dedue (Timeskip)": 7,
+ "Dimitri": 6,
+ "Dimitri (Child)": 5,
+ "Dimitri (Insane) (Timeskip)": 5,
+ "Dimitri (No Eyepatch) (Timeskip)": 6,
+ "Dimitri (Timeskip)": 11,
+ "Dorothea": 7,
+ "Dorothea (Timeskip)": 7,
+ "Duke Aegir": 4,
+ "Edelgard": 6,
+ "Edelgard (Child)": 5,
+ "Edelgard (Timeskip)": 6,
+ "Emperor Ionius IX": 3,
+ "Felix": 6,
+ "Felix (Timeskip)": 6,
+ "Ferdinand": 6,
+ "Ferdinand (Timeskip)": 6,
+ "Flame Emperor": 5,
+ "Flayn": 6,
+ "Fleche": 6,
+ "Fleche (Villager)": 6,
+ "Giant Bird": 1,
+ "Giant Crawler": 1,
+ "Giant Wolf": 1,
+ "Gilbert": 6,
+ "Golem": 1,
+ "Gwendal": 5,
+ "Hanneman": 6,
+ "Hapi": 6,
+ "Hapi (Timeskip)": 6,
+ "Hegemon Edelgard": 3,
+ "Hilda": 6,
+ "Hilda (Timeskip)": 6,
+ "Hubert": 6,
+ "Hubert (Timeskip)": 6,
+ "Ignatz": 7,
+ "Ignatz (Timeskip)": 7,
+ "Ingrid": 6,
+ "Ingrid (Timeskip)": 6,
+ "Jeralt": 6,
+ "Jeritza": 2,
+ "Jeritza (Maskless)": 7,
+ "Judith": 5,
+ "Kostas": 5,
+ "Kronya": 5,
+ "Ladislava": 5,
+ "Lambert": 5,
+ "Leonie": 6,
+ "Leonie (Timeskip)": 6,
+ "Linhardt": 7,
+ "Linhardt (Timeskip)": 7,
+ "Lonato": 5,
+ "Lord Arundel": 5,
+ "Lorenz": 6,
+ "Lorenz (Timeskip)": 6,
+ "Lysithea": 6,
+ "Lysithea (Timeskip)": 6,
+ "Manuela": 7,
+ "Marcelle": 1,
+ "Marianne": 9,
+ "Marianne (Timeskip)": 9,
+ "Mercedes": 6,
+ "Mercedes (Timeskip)": 6,
+ "Metodey": 5,
+ "Miklan": 4,
+ "Monica": 5,
+ "Nader": 5,
+ "Nemesis": 4,
+ "Pallardó": 5,
+ "Petra": 7,
+ "Petra (Timeskip)": 7,
+ "Randolph": 5,
+ "Raphael": 6,
+ "Raphael (Timeskip)": 6,
+ "Rhea": 8,
+ "Rodrigue": 5,
+ "Seiros": 5,
+ "Seteth": 6,
+ "Shamir": 6,
+ "Solon": 5,
+ "Sothis": 7,
+ "Sylvain": 6,
+ "Sylvain (Timeskip)": 6,
+ "Thales": 4,
+ "The Immaculate One": 1,
+ "The Immovable": 1,
+ "The Wind Caller": 1,
+ "Titanus": 1,
+ "Tomas": 4,
+ "White Beast": 1,
+ "Yuri": 6,
+ "Yuri (Timeskip)": 6
 }
