@@ -20,7 +20,8 @@ new Vue({
     portrait: null,
     emotion: null,
     text: null,
-    error: null,
+    name_error: null,
+    text_error: null,
     canvas: null,
     ctx: null,
     loading: true,
@@ -62,6 +63,7 @@ new Vue({
       this.render();
     },
     render() {
+      this.loading = true;
       log("Rendering...");
 
       // Clear canvas
@@ -112,6 +114,15 @@ new Vue({
         const [canvas, ctx] = createCanvas(GLYPH_W, GLYPH_H);
         const meta = this.glyphs[text[i]];
 
+        // If glyph not found
+        if (meta == undefined) {
+          this.name_error = "Unknown glyph. See glyph_meta.json";
+          return;
+        }
+
+        // Clear error
+        this.name_error = "";
+
         // Drawing letter in empty canvas
         ctx.drawImage(
           this.resources.font,
@@ -152,9 +163,6 @@ new Vue({
       let posY = TEXT_POS_Y;
 
       for (let i = 0; i < text.length; i++) {
-        const [canvas, ctx] = createCanvas(GLYPH_W, GLYPH_H);
-        const meta = this.glyphs[text[i]];
-
         // If letter eq new line, then change pos
         if (text[i] == "\n") {
           posX = TEXT_POS_X;
@@ -167,6 +175,19 @@ new Vue({
           posX += SPACE_SIZE;
           continue;
         }
+
+        const [canvas, ctx] = createCanvas(GLYPH_W, GLYPH_H);
+        const meta = this.glyphs[text[i]];
+
+        // If glyph not found
+        if (meta == undefined) {
+          console.log(meta);
+          this.text_error = "Unknown glyph. See glyph_meta.json";
+          return;
+        }
+
+        // Clear error
+        this.text_error = "";
 
         // Drawing letter in empty canvas
         ctx.drawImage(

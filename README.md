@@ -28,3 +28,8 @@ https://bqio.ru/fe3h-text-simulator/
 - Added DLC characters;
 - Optimized core;
 - Bugs fixed.
+
+**v1.0.1**
+
+- Added error messages;
+- Bugs fixed.
