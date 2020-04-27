@@ -33,3 +33,8 @@ https://bqio.ru/fe3h-text-simulator/
 
 - Added error messages;
 - Bugs fixed.
+
+**v1.0.2**
+
+- Changed GLYPH_MARGIN and SPACE_SIZE const;
+- Bugs fixed.

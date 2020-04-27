@@ -1,7 +1,7 @@
 const GLYPH_W = 48;
 const GLYPH_H = 52;
-const GLYPH_MARGIN = 2;
-const SPACE_SIZE = 15;
+const GLYPH_MARGIN = 1;
+const SPACE_SIZE = 10;
 const NAME_POS_X_START = 100;
 const NAME_POS_X_END = 495;
 const NAME_POS_Y = 222;
@@ -48,7 +48,7 @@ new Vue({
       this.resources.textBox = await loadImage("img/textbox.png");
       this.resources.fontColored = await loadImage("img/fc.png");
       this.resources.font = await loadImage("img/f.png");
-      this.resources.fontMask = await loadImage("img/mask.png");
+      this.resources.mask = await loadImage("img/mask.png");
       this.resources.portrait = await loadImage("img/portraits/Anna/0.png");
       log("Done.");
 
@@ -216,7 +216,7 @@ new Vue({
       const [canvas, ctx] = createCanvas(image.width, image.height);
 
       // Drawing portrait and mask
-      ctx.drawImage(this.resources.fontMask, 0, 0);
+      ctx.drawImage(this.resources.mask, 0, 0);
       ctx.globalCompositeOperation = "source-in";
       ctx.drawImage(image, 0, 0);
 
