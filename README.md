@@ -1,6 +1,6 @@
 # FE3H-Text-Simulator
 
-https://bqio.ru/fe3h-text-simulator/
+https://bqio.github.io/FE3H-Text-Simulator/
 
 **v0.0.1**
 
