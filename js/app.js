@@ -40,7 +40,7 @@ new Vue({
       // Initialize canvas and context
       log("Initialize canvas and context...");
       this.canvas = this.$refs.canvas;
-      this.ctx = this.canvas.getContext("2d");
+      this.ctx = this.canvas.getContext("2d", { willReadFrequently: true });
       log("Done.");
 
       // Loading resources
@@ -56,7 +56,7 @@ new Vue({
       log("Set default values...");
       this.portrait = this.name = "Anna";
       this.emotion = 0;
-      this.text = "Hello, friend!\nHow are you?";
+      this.text = "Welcome!";
       log("Done.");
 
       // Running render
@@ -257,7 +257,7 @@ function createCanvas(width, height) {
   canvas.width = width;
   canvas.height = height;
 
-  return [canvas, canvas.getContext("2d")];
+  return [canvas, canvas.getContext("2d", { willReadFrequently: true })];
 }
 
 // Credits: github.com/remy

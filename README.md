@@ -1,6 +1,10 @@
 # FE3H-Text-Simulator
 
+## URL
+
 https://bqio.github.io/FE3H-Text-Simulator/
+
+## Changelog
 
 **v0.0.1**
 
@@ -38,3 +42,9 @@ https://bqio.github.io/FE3H-Text-Simulator/
 
 - Changed GLYPH_MARGIN and SPACE_SIZE const;
 - Bugs fixed.
+
+**v1.0.3**
+
+- Updated links;
+- Minify js script;
+- Small refactoring.
