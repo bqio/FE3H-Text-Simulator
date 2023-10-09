@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Make your best conversation." />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
     <link rel="icon" type="image/png" href="img/portraits/Anna/0.png" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Fire Emblem: Three Houses - Conversation Simulator</title>
@@ -14,47 +17,61 @@
       <div class="container mt-4" v-show="!loading">
         <div class="card">
           <div class="card-body">
-            <canvas
-              ref="canvas"
-              class="w-100"
-              width="1728"
-              height="554"
-            ></canvas>
             <div class="form-group">
-              <label>Name</label>
-              <input
-                v-model="name"
-                @keyup="render()"
-                type="text"
-                class="form-control"
-                aria-autocomplete="none"
-              />
-              <p v-if="name_error" class="text-danger">{{ name_error }}</p>
+              <canvas
+                ref="canvas"
+                class="w-100"
+                width="1728"
+                height="554"
+              ></canvas>
             </div>
-            <div class="form-group">
-              <label>Portrait</label>
-              <select
-                class="form-control"
-                @change="updatePortrait"
-                v-model="portrait"
-              >
-                <option v-for="(_, name) in portraits" :value="name">
-                  {{ name }}
-                </option>
-              </select>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input
+                    v-model="name"
+                    @keyup="render()"
+                    type="text"
+                    class="form-control"
+                    aria-autocomplete="none"
+                  />
+                  <p v-if="name_error" class="text-danger">{{ name_error }}</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Portrait</label>
+                  <select
+                    class="form-control"
+                    @change="updatePortrait"
+                    v-model="portrait"
+                  >
+                    <option v-for="(_, name) in portraits" :value="name">
+                      {{ name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group">
+                  <label>Emotion</label>
+                  <select
+                    class="form-control"
+                    @change="updateEmotion"
+                    v-model="emotion"
+                  >
+                    <option
+                      v-for="(_, idx) in portraits[portrait]"
+                      :value="idx"
+                    >
+                      {{ idx }}
+                    </option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label>Emotion</label>
-              <select
-                class="form-control"
-                @change="updateEmotion"
-                v-model="emotion"
-              >
-                <option v-for="(_, idx) in portraits[portrait]" :value="idx">
-                  {{ idx }}
-                </option>
-              </select>
-            </div>
+
             <div class="form-group">
               <label>Text</label>
               <textarea
@@ -68,18 +85,19 @@
               <p v-if="text_error" class="text-danger">{{ text_error }}</p>
             </div>
             <a
-              class="btn btn-block btn-success"
+              class="btn btn-block btn-anna"
               href="#"
               @click="download($event)"
             >
-              Download
+              {{`Download ${name}.png`}}
             </a>
           </div>
         </div>
-        <p class="text-center my-3 text-muted">
-          by <a target="_blank" href="https://github.com/bqio">bqio</a>, thx
+        <p class="text-center my-2 text-muted">
+          <strong>v1.0.4</strong> by
+          <a target="_blank" href="https://github.com/bqio">bqio</a>, thx
           <a target="_blank" href="https://github.com/SinsofSloth">
-            SinsofSloth </a
+            SinsofSloth</a
           >,
           <a
             target="_blank"
@@ -90,7 +108,13 @@
         </p>
       </div>
     </div>
-    <script src="js/vue.min.js"></script>
-    <script src="js/app.min.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js"
+        }
+      }
+    </script>
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>

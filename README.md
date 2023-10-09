@@ -48,3 +48,8 @@ https://bqio.github.io/FE3H-Text-Simulator/
 - Updated links;
 - Minify js script;
 - Small refactoring.
+
+**v1.0.4**
+
+- Redesign;
+- Small core updates.

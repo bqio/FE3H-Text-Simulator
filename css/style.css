@@ -2,10 +2,29 @@ textarea {
   resize: none;
 }
 
+.card {
+  border: none;
+}
+
 .card-body {
-  padding: 30px;
+  padding: 20px;
+}
+
+a,
+a:hover {
+  color: #d95d78;
 }
 
 a:hover {
   text-decoration: none;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.btn-anna,
+.btn-anna:hover {
+  background-color: #d95d78;
+  color: #fff;
 }
